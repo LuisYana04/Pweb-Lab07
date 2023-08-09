@@ -22,3 +22,16 @@ class Language(models.Model):
 class Framework(models.Model):
     name = models.CharField(max_length=10)
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
+
+class Movie(models.Model):
+    name=models.CharField(max_length=10)
+
+    def _str_(self):
+        return self.name
+    
+class Character(models.Model):
+    name=models.CharField(max_length=10)
+    movies=models.ManyToManyField(Movie)
+
+    def _str_(self):
+        return self.name
