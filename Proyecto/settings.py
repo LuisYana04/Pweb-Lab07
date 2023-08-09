@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import smtplib
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Apps.Aplicacion1',
-    'Apps.send',
+    'Apps.Send',
 
 ]
 
@@ -107,11 +108,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
+
+#USE_L1ON = True
 
 USE_TZ = True
 
@@ -125,3 +128,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_HOST = "smtp-mail.outlook.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "luisyaqu_16@hotmail.com"
+EMAIL_HOST_PASSWORD="luisidota12"
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
